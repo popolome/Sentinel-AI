@@ -57,6 +57,12 @@ Real-world test results captured from the live deployed app:
 ### Test 3 — Absent from Desk
 ![Test 3 - Absent](assets/test3_absent.png)
 
+### App Dashboard 1
+<img width="1840" height="930" alt="image" src="https://github.com/user-attachments/assets/cf40e514-cb1e-4bc9-9ab5-3702ce43e525" />
+
+### App Dashboard 2
+<img width="1777" height="773" alt="image" src="https://github.com/user-attachments/assets/b431dfc2-8097-4cbf-9e4d-a216a7dbbd5a" />
+
 ---
 
 ## 🗂️ Project Structure
