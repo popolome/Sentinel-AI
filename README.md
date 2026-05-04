@@ -44,6 +44,21 @@ $$Focus Score = \left(\frac{Total Time - Distracted Time}{Total Time}\right) \ti
 
 ---
 
+## 🧪 Detection Tests
+
+Real-world test results captured from the live deployed app:
+
+### Test 1 — Focused ✓
+![Test 1 - Focused](assets/test1_focused.png)
+
+### Test 2 — Phone Distraction
+![Test 2 - Phone Distraction](assets/test2_phone.png)
+
+### Test 3 — Absent from Desk
+![Test 3 - Absent](assets/test3_absent.png)
+
+---
+
 ## 🗂️ Project Structure
 
 ```
