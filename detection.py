@@ -32,13 +32,13 @@ def analyze_frame(frame: np.ndarray) -> dict:
     conf = float(box.conf)
     x1, y1, x2, y2 = map(int, box.xyxy[0])
 
-    if cls == COCO_PERSON and conf > 0.5:
+    if cls == COCO_PERSON and conf > 0.35:
       person_count += 1
       cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 255, 0), 2)
       cv2.putText(annotated, f"Person ({conf:.0%})", (x1, y1 - 8),
                  cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 1)
 
-    elif cls == COCO_PHONE and conf > 0.4:
+    elif cls == COCO_PHONE and conf > 0.25:
       phone_detected = True
       cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 0, 255), 3)
       cv2.putText(annotated, f"Phone ({conf:.0%})", (x1, y1 - 8),
