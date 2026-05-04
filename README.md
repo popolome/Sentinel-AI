@@ -83,6 +83,7 @@ streamlit run app.py
 - [ ] Add posture detection (MediaPipe)
 - [ ] Weekly focus report export (PDF)
 - [ ] Custom distraction categories
+- [ ] Improve phone detection for rear-facing camera angles (fine-tune on custom dataset)
 
 ---
 
