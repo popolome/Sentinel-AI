@@ -26,7 +26,7 @@ $$Focus Score = \left(\frac{Total Time - Distracted Time}{Total Time}\right) \ti
 
 | Layer | Technology |
 |---|---|
-| Object Detection | YOLOv8 Nano (Ultralytics) |
+| Object Detection | YOLOv8 Small (Ultralytics) |
 | Computer Vision | OpenCV |
 | Dashboard UI | Streamlit |
 | Session Storage | SQLite |
