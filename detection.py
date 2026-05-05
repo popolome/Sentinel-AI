@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import cv2
 import numpy as np
 
-model = YOLO('yolov8n.pt')  # This we use YOLOv8n for Cloud compatibility
+model = YOLO('yolov8s.pt')  # This we use YOLOv8n for Cloud compatibility
 
 COCO_PHONE = 67
 COCO_PERSON = 0
