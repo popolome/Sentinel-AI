@@ -90,7 +90,7 @@ streamlit run app.py
 
 ## 💡 Design Decisions
 
-**Why YOLOv8 Nano?** Optimised for CPU inference with minimal latency — no GPU required, making it suitable for cloud deployment.
+**Why YOLOv8 Small?** Optimised for CPU inference with minimal latency — no GPU required, making it suitable for cloud deployment. Upgraded from YOLOv8 Nano after testing revealed Nano's limitations in detecting phones under varying screen and orientation conditions.
 
 **Why Streamlit `st.camera_input`?** Unlike a raw video stream, snapshot-based inference is cloud-compatible and works across devices without browser security restrictions.
 
@@ -105,6 +105,14 @@ streamlit run app.py
 - [ ] Weekly focus report export (PDF)
 - [ ] Custom distraction categories
 - [ ] Improve phone detection for rear-facing camera angles (fine-tune on custom dataset)
+
+---
+
+## ⚠️ Known Limitations
+
+- **Phone detection requires screen-on, front-facing orientation** — YOLOv8 is trained on the COCO dataset which predominantly features lit, front-facing phones. Rear-facing or black-screened phones may not be detected reliably.
+- **SQLite does not persist across Streamlit Cloud redeployments** — session history resets when the app is redeployed.
+- **Snapshot-based inference, not live stream** — detection runs per captured frame rather than continuously, which may miss brief distractions between snapshots.
 
 ---
 
