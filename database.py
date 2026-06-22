@@ -24,18 +24,19 @@ def init_db():
   conn.commit()
   conn.close()
 
-def save_session(duration_seconds, focus_score, phone_seconds, absent_seconds, social_seconds):
+def save_session(start_time_obj, duration_seconds, focus_score, phone_seconds, absent_seconds, social_seconds):
   """This will save a completed work session to the database."""
   conn = sqlite3.connect(DB_NAME)
   c = conn.cursor()
+  end_time_obj = datetime.now()    # This captures the exact time when the user click save_session button.
   c.execute('''
     INSERT INTO sessions
     (date, start_time, end_time, duration_seconds, focus_score, phone_seconds, absent_seconds, social_seconds)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   ''', (
-    datetime.now().strftime("%Y-%m-%d"),
-    datetime.now().strftime("%H:%M:%S"),
-    datetime.now().strftime("%H:%M:%S"),
+    start_time_obj.strftime("%Y-%m-%d"),    # The start YYYY-MM-DD captured when user click the session start
+    start_time_obj.strftime("%H:%M:%S"),    # The start time captured when user click the session start
+    end_time_obj.strftime("%H:%M:%S"),      # The time format when the user clicks save_session button as I mentioned above
     duration_seconds,
     focus_score,
     phone_seconds,
