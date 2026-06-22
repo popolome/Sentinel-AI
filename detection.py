@@ -44,24 +44,24 @@ def analyze_frame(frame: np.ndarray) -> dict:
       cv2.putText(annotated, f"Phone ({conf:.0%})", (x1, y1 - 8),
                  cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 1)
 
-    # This will determine the status where the priority order matters
-    if phone_detected:
-      status = "Phone Distraction"
-      distraction_type = "phone"
-    elif person_count == 0:
-      status = "Absent from Desk"
-      distraction_type = "absent"
-    elif person_count > 1:
-      status = "Social Distraction"
-      distraction_type = "social"
-    else:
-      status = "Focused ✓"
-      distraction_type = None
+  # This will determine the status where the priority order matters
+  if phone_detected:
+    status = "Phone Distraction"
+    distraction_type = "phone"
+  elif person_count == 0:
+    status = "Absent from Desk"
+    distraction_type = "absent"
+  elif person_count > 1:
+    status = "Social Distraction"
+    distraction_type = "social"
+  else:
+    status = "Focused ✓"
+    distraction_type = None
 
-    return {
-      "status": status,
-      "distraction_type": distraction_type,
-      "annotated_frame": annotated,
-      "person_count": person_count,
-      "phone_detected": phone_detected
-    }
+  return {
+    "status": status,
+    "distraction_type": distraction_type,
+    "annotated_frame": annotated,
+    "person_count": person_count,
+    "phone_detected": phone_detected
+  }
